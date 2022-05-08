@@ -1,12 +1,19 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {ButtonProps} from '../interfaces';
 
-const BotonCalc = ({texto, color = '#2d2d2d'}: ButtonProps) => {
+const BotonCalc = ({texto, color = '#2d2d2d', ancho = false}: ButtonProps) => {
   return (
-    <View style={{...styles.boton, backgroundColor: color}}>
-      <Text style={styles.botonTexto}>{texto}</Text>
-    </View>
+    <TouchableOpacity>
+      <View
+        style={{
+          ...styles.boton,
+          backgroundColor: color,
+          width: ancho ? 180 : 80,
+        }}>
+        <Text style={styles.botonTexto}>{texto}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 

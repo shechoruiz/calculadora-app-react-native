@@ -2,9 +2,14 @@ import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {ButtonProps} from '../interfaces';
 
-const BotonCalc = ({texto, color = '#2d2d2d', ancho = false}: ButtonProps) => {
+const BotonCalc = ({
+  texto,
+  color = '#2d2d2d',
+  ancho = false,
+  accion,
+}: ButtonProps) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => accion(texto)}>
       <View
         style={{
           ...styles.boton,
